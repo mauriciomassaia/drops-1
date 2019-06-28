@@ -11,7 +11,7 @@ module.exports = function (env, args) {
     },
     output: {
       path: path.join(__dirname, './dist'),
-      publicPath: './',
+      publicPath: '/',
       filename: `[name].bundle.js`,
       chunkFilename: '[name].bundle.js'
     },
@@ -21,15 +21,10 @@ module.exports = function (env, args) {
     module: {
       rules: [{
         test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
-            plugins: [
-              '@babel/plugin-transform-spread',
-              '@babel/plugin-transform-async-to-generator',
-              '@babel/plugin-syntax-dynamic-import'
-            ],
             presets: ['@babel/preset-env']
           }
         }

@@ -43,7 +43,7 @@ function draw () {
     drop.rotation = -r
     app.stage.addChild(drop)
     angle += 50 + frame * 0.01
-    radius += 0.5
+    radius += 0.4
     frame++
     if (frame >= TOTAL_FRAMES) {
       app.stop()
@@ -59,7 +59,7 @@ function createDrop (x, y, c, h = 100) {
   // shadow
   g.beginFill(0x333333, 0.5)
   g.moveTo(0, -54)
-  g.lineTo(w + 4, h )
+  g.lineTo(w + 4, h)
   g.lineTo(-w - 4, h)
   // color
   g.beginFill(c)
@@ -70,5 +70,5 @@ function createDrop (x, y, c, h = 100) {
 }
 
 document.body.appendChild(app.view)
-app.ticker.add(()=> draw())
+app.ticker.add(() => draw())
 app.start()

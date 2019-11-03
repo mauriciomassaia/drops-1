@@ -26,8 +26,8 @@ const app = new Application({
 let frame = 0
 let dx
 let dy
-let x = window.innerWidth >> 1
-let y = window.innerHeight >> 1
+const x = window.innerWidth >> 1
+const y = window.innerHeight >> 1
 let angle = 0
 let radius = 10
 let r
